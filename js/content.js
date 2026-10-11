@@ -239,11 +239,11 @@ window.CONTENT = {
 
   /* stops on the path: flags in front of the arches in the painting. bx,by = base of the flag pole in map pixels */
   path: [
-    { id: "j-bits", flag: "BITS Pilani", tag: "EEE, class of 2026", sub: "Education", when: "2022 to 2026", bx: 765, by: 462, color: "#8fd0ff",
+    { id: "j-bits", flag: "BITS Pilani", tag: "EEE, class of 2026", sub: "Education", when: "2022 to 2026", bx: 102, by: 528, color: "#8fd0ff",
       line: "Where it started: electrical engineering fundamentals, and where I found research.",
       bullets: ["B.E. in Electrical and Electronics Engineering.", "Where I found research: papers, experiments and building from scratch.", "Combined hardware thinking with machine learning and quantitative work."],
       impact: [["B.E.", "Electrical and Electronics"], ["2026", "Graduated"]], skills: ["Python", "Machine learning"] },
-    { id: "j-kat", flag: "Khageshvara", tag: "Drone tech startup", sub: "Product Development Lead and ML Intern", when: "May to Oct 2023", bx: 672, by: 376, color: "#7fe3c8",
+    { id: "j-kat", flag: "Khageshvara", tag: "Drone tech startup", sub: "Product Development Lead and ML Intern", when: "May to Oct 2023", bx: 772, by: 702, color: "#7fe3c8",
       line: "Drone vision that spots people in real time.",
       bullets: ["Built CNN vision pipelines for real-time human detection from drones.", "Built the financial model and pitch behind a successful DST funding round."],
       impact: [["Real time", "person detection from aerial video"], ["Funded", "DST funding secured"]], skills: ["Computer vision", "CNNs", "OpenCV"] },
@@ -251,11 +251,11 @@ window.CONTENT = {
       line: "Safer railway tracks using sensors and simulations.",
       bullets: ["Designed 20+ PLC railway simulations for autonomous control and safety validation.", "Built infrared and IoT sensor networks for real-time track monitoring."],
       impact: [["98%", "trespassing detection accuracy"], ["20+", "railway simulations"]], skills: ["IoT", "PLC", "Sensors"] },
-    { id: "j-fidel", flag: "FidelFolio", tag: "Quant investments", sub: "Quant Investment Analyst", when: "May to Jun 2025", bx: 772, by: 702, color: "#b9a6ff",
+    { id: "j-fidel", flag: "FidelFolio", tag: "Quant investments", sub: "Quant Investment Analyst", when: "May to Jun 2025", bx: 765, by: 462, color: "#b9a6ff",
       line: "Portfolio research that raised risk-adjusted returns.",
       bullets: ["Built a research workflow for portfolio analytics and Sharpe evaluation.", "Used genetic algorithms and Bayesian optimisation for risk-aware portfolios.", "Analysed 24 factors across 200+ portfolios."],
       impact: [["+42%", "Sharpe ratio"], ["90%", "faster research workflow"]], skills: ["Portfolio optimisation", "Factor models", "Bayesian optimisation"] },
-    { id: "j-nurix", flag: "Nurix AI", tag: "Production speech AI", sub: "ML Engineering Intern", when: "Jul to Dec 2025", bx: 102, by: 528, color: "#72f1df",
+    { id: "j-nurix", flag: "Nurix AI", tag: "Production speech AI", sub: "ML Engineering Intern", when: "Jul to Dec 2025", bx: 672, by: 376, color: "#72f1df",
       line: "Speech AI running in production.",
       bullets: ["Built and deployed a TinyBERT voicemail detector with backend integration.", "Designed a word-error correction pipeline using Word2Vec, phonetic normalisation and LLM scoring.", "Improved real-time turn-end detection in a transformer speech-to-text pipeline."],
       impact: [["95%", "voicemail detection precision"], ["40%", "fewer word errors"]], skills: ["Transformers", "Speech", "Deployment", "NLP"] }
