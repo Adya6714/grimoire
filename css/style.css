@@ -197,9 +197,8 @@ body.calm .reveal{opacity:1;transform:none;transition:none}
 }
 
 /* path */
-.pathGrid{border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.5);background:#06242a}
-.pathMap{position:relative}
-.pathMap>img{width:100%;aspect-ratio:1700/962;height:auto;object-fit:cover;display:block}
+.pathGrid{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.5);aspect-ratio:1700/962;background:#06242a}
+.pathGrid>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .stepper{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
 .stepper button{display:flex;flex-direction:column;align-items:flex-start;gap:0;padding:8px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(5,24,28,.85);text-align:left;transition:border-color .18s,background .18s}
 .stepper button small{color:var(--muted);font-size:13px}.stepper button b{font:600 15px var(--display)}
@@ -215,7 +214,7 @@ body.calm .reveal{opacity:1;transform:none;transition:none}
 .flag[aria-pressed="true"]::after{content:"";position:absolute;left:-14px;bottom:-6px;width:36px;height:12px;border-radius:50%;background:radial-gradient(var(--c),transparent 70%);opacity:.8}
 body.calm .flag .cloth{animation:none}
 @keyframes wave{0%,100%{transform:skewY(0deg) scaleX(1)}50%{transform:skewY(-2.5deg) scaleX(.97)}}
-.pathCard{position:relative;background:rgba(4,22,26,.96);border:0;border-top:1px solid var(--line);border-radius:0;padding:22px 26px 20px;z-index:3}
+.pathCard{position:absolute;left:3.5%;top:7%;width:min(52%,560px);max-height:88%;overflow:auto;background:rgba(4,22,26,.93);border:1px solid var(--line);border-radius:18px;padding:24px 26px 22px;z-index:3}
 .pathCard .top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
 .pathCard .dot{width:12px;height:12px;border-radius:50%;background:var(--c)}
 .pathCard h3{font-size:26px}
@@ -227,7 +226,6 @@ body.calm .flag .cloth{animation:none}
 .num{flex:1;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--line)}
 .num b{display:block;font:700 26px/1 var(--display);color:var(--c)}.num span{font-size:14px;color:var(--muted)}
 .pcardNav{display:flex;justify-content:space-between;gap:10px;margin-top:14px}
-@media(max-width:900px){.pathCard{padding:18px 16px 16px}}
 
 /* shelf */
 .shelfGrid{display:grid;grid-template-columns:300px minmax(0,1fr);gap:26px;align-items:start}
