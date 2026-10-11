@@ -208,11 +208,11 @@ function openAll() {
 let pIdx = 0;
 function path() {
   const J = C.path;
-  $("#path").innerHTML = `<div class="wrap"><div class="head reveal"><h2>The path so far</h2><p>Pick a flag in front of an arch, or use the buttons. Each one opens what I worked on there.</p></div>
+  $("#path").innerHTML = `<div class="wrap"><div class="head reveal"><h2>The path so far</h2><p>Pick a flag on the path, or use the buttons. Each one opens what I worked on there.</p></div>
   <div class="stepper reveal" id="stepper">${J.map((j, i) => `<button type="button" data-i="${i}" style="--c:${j.color}" aria-pressed="${i === 0}"><small>${esc(j.when)}</small><b>${esc(j.flag)}</b></button>`).join("")}</div>
-  <div class="pathGrid reveal" id="pathGrid"><img src="${A.banner}" alt="Painted river bank with stone arches" loading="lazy">
-   ${J.map((j, i) => `<button class="flag${j.bx / 848 > .8 ? " rev" : ""}" style="left:${(j.bx / 848 * 100).toFixed(2)}%;top:${((j.by - 250) / 480 * 100).toFixed(2)}%;--c:${j.color}" data-i="${i}" aria-pressed="${i === 0}" aria-label="${esc(j.flag)}: ${esc(j.sub)}"><span class="cloth">${esc(j.flag)}</span></button>`).join("")}
-   <div class="pathCard" id="pathCard" aria-live="polite"></div></div></div>`;
+  <div class="pathGrid reveal" id="pathGrid"><div class="pathMap"><img src="${A.banner}" alt="Painted river bank with stone arches" loading="lazy">
+   ${J.map((j, i) => `<button class="flag${j.rev ? " rev" : ""}" style="left:${(j.bx / 848 * 100).toFixed(2)}%;top:${((j.by - 250) / 480 * 100).toFixed(2)}%;--c:${j.color}" data-i="${i}" aria-pressed="${i === 0}" aria-label="${esc(j.flag)}: ${esc(j.tag || j.sub)}"><span class="cloth">${esc(j.flag)}<small>${esc(j.tag || j.sub)}</small></span></button>`).join("")}
+   </div><div class="pathCard" id="pathCard" aria-live="polite"></div></div></div>`;
   selPath(0);
   const pick = e => { const b = e.target.closest("[data-i]"); if (b && (b.classList.contains("flag") || b.closest("#stepper"))) selPath(+b.dataset.i); };
   $("#stepper").addEventListener("click", pick); $("#pathGrid").addEventListener("click", pick);
@@ -221,7 +221,7 @@ function selPath(i) {
   const J = C.path; pIdx = (i + J.length) % J.length; const j = J[pIdx];
   $$("#stepper button").forEach((b, k) => b.setAttribute("aria-pressed", String(k === pIdx))); $$("#pathGrid .flag").forEach((b, k) => b.setAttribute("aria-pressed", String(k === pIdx)));
   const c = $("#pathCard"); c.style.setProperty("--c", j.color);
-  c.innerHTML = `<div class="top"><span class="dot"></span><h3>${esc(j.flag)}</h3></div><div class="sub">${esc(j.sub)}, ${esc(j.when)}</div><p class="line">${esc(j.line)}</p>
+  c.innerHTML = `<div class="top"><span class="dot"></span><h3>${esc(j.flag)}</h3></div><div class="sub">${esc(j.tag ? j.tag + " · " : "")}${esc(j.sub)}, ${esc(j.when)}</div><p class="line">${esc(j.line)}</p>
    <ul>${j.bullets.map(b => `<li>${esc(b)}</li>`).join("")}</ul><div class="nums">${j.impact.map(n => `<div class="num"><b>${esc(n[0])}</b><span>${esc(n[1])}</span></div>`).join("")}</div>
    <div class="chips">${j.skills.map(s => `<span class="chip">${esc(s)}</span>`).join("")}</div>
    <div class="pcardNav"><button class="btn sm" data-pn="-1">Previous</button><button class="btn sm primary" data-pn="1">Next flag</button></div>`;
